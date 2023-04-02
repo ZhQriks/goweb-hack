@@ -182,6 +182,11 @@ const Header = (): JSX.Element => {
                 {route.title}
               </Link>
             ))}
+            <Group px='md'>
+              <Button onClick={openModal} px={30}>
+                Войти
+              </Button>
+            </Group>
           </Stack>
           <Divider my='sm' mx='-md' color='gray.1' />
         </Drawer>

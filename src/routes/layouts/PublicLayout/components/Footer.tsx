@@ -33,10 +33,10 @@ const Footer = (): JSX.Element => {
   }));
 
   const links = [
-    { link: '#', label: 'Home' },
-    { link: '#', label: 'About' },
-    { link: '#', label: 'Contact' },
-    { link: '#', label: 'Privacy Policy' },
+    { link: '#', label: 'Главная' },
+    { link: '#', label: 'О нас' },
+    { link: '#', label: 'Связатся' },
+    { link: '#', label: 'Политика конфиденциальности' },
   ];
   const { classes } = useStyles();
 
