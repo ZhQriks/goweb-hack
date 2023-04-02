@@ -25,6 +25,41 @@ import { useUser } from 'query/auth';
 import { Link, useLocation } from 'react-router-dom';
 import { storage } from 'utils/storage';
 
+const useStyles = createStyles(theme => ({
+  link: {
+    display: 'flex',
+    alignItems: 'center',
+    height: '100%',
+    paddingLeft: theme.spacing.md,
+    paddingRight: theme.spacing.md,
+    textDecoration: 'none',
+    color: theme.colorScheme === 'dark' ? theme.white : theme.black,
+    fontWeight: 500,
+    fontSize: theme.fontSizes.sm,
+
+    transition: 'color 0.3s ease, background-color 0.3s ease',
+
+    ...theme.fn.hover({
+      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+    }),
+  },
+  active: {
+    color: theme.colors.green[6],
+  },
+
+  hiddenMobile: {
+    [theme.fn.smallerThan('sm')]: {
+      display: 'none',
+    },
+  },
+
+  hiddenDesktop: {
+    [theme.fn.largerThan('sm')]: {
+      display: 'none',
+    },
+  },
+}));
+
 const Header = (): JSX.Element => {
   const [modalOpened, { open: openModal, close: closeModal }] = useDisclosure(false);
 
@@ -39,7 +74,7 @@ const Header = (): JSX.Element => {
     },
     {
       title: 'Калькулятор',
-      path: '/calculator',
+      path: '/calculate',
     },
     {
       title: 'Руководства',
@@ -47,43 +82,10 @@ const Header = (): JSX.Element => {
     },
     {
       title: 'Мероприятия',
-      path: '/activities',
+      path: '/events',
     },
+    { path: '/buy', title: 'Устойчивые покупки' },
   ];
-  const useStyles = createStyles(theme => ({
-    link: {
-      display: 'flex',
-      alignItems: 'center',
-      height: '100%',
-      paddingLeft: theme.spacing.md,
-      paddingRight: theme.spacing.md,
-      textDecoration: 'none',
-      color: theme.colorScheme === 'dark' ? theme.white : theme.black,
-      fontWeight: 500,
-      fontSize: theme.fontSizes.sm,
-
-      transition: 'color 0.3s ease, background-color 0.3s ease',
-
-      ...theme.fn.hover({
-        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
-      }),
-    },
-    active: {
-      color: theme.colors.green[6],
-    },
-
-    hiddenMobile: {
-      [theme.fn.smallerThan('sm')]: {
-        display: 'none',
-      },
-    },
-
-    hiddenDesktop: {
-      [theme.fn.largerThan('sm')]: {
-        display: 'none',
-      },
-    },
-  }));
   const { classes } = useStyles();
 
   const headerHiddenRoutes = ['/login', '/register'];

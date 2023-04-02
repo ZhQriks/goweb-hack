@@ -11,20 +11,20 @@ const mockdata = [
     title: 'Экологические технологии',
     description: 'Технологии, которые позволяют снизить негативное воздействие на окружающую среду',
     icon: IconCpu2,
-    route: '/guide/2',
+    route: '/guide/3',
   },
   {
     title: 'Переработка отходов',
     description: 'Отходы преобразуются в новые полезные продукты',
     icon: IconRecycle,
-    route: '/guide/3',
+    route: '/guide/1',
   },
   {
     title: 'Экологический образ жизни',
     description:
       'Образ жизни, при котором человек учитывает влияние своих действий на окружающую среду и пытается минимизировать негативное воздействие на нее',
     icon: IconTrekking,
-    route: '/guide/4',
+    route: '/guide/2',
   },
 ];
 
@@ -74,7 +74,7 @@ const useStyles = createStyles(theme => ({
 
 const SectionCards = (): JSX.Element => {
   const { classes, theme } = useStyles();
-  const { ref, inView } = useInView();
+  const { ref, inView } = useInView({ threshold: 0.4 });
   const animation = useAnimation();
 
   const navigate = useNavigate();
@@ -96,9 +96,8 @@ const SectionCards = (): JSX.Element => {
   }, [inView]);
 
   const features = mockdata.map(feature => (
-    <motion.div animate={animation}>
+    <motion.div animate={animation} key={feature.title}>
       <Card
-        key={feature.title}
         shadow='md'
         radius='md'
         className={classes.card}

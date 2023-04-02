@@ -27,12 +27,12 @@ const ArticlesCards = (): JSX.Element => {
   const cards = Array.isArray(news.data) ? (
     news.data.map((article, index) => (
       <motion.div
+        key={article.title}
         initial={{ x: index % 2 === 0 ? '-100vw' : '100vw' }}
         animate={{ x: 0 }}
         transition={{ type: 'spring', duration: 1, bounce: 0.1 }}
       >
         <Card
-          key={article.title}
           p='md'
           radius='md'
           component='a'

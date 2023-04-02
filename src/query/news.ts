@@ -1,7 +1,6 @@
 import { useQuery, UseQueryResult } from '@tanstack/react-query';
 import { baseFetch } from 'service/authApi';
-
-import { backendUrl } from '../utils/consts';
+import { backendUrl } from 'utils/consts';
 
 function useNews(id?: number): UseQueryResult<any> {
   const fetchNews = async (): Promise<any> => {
@@ -13,7 +12,7 @@ function useNews(id?: number): UseQueryResult<any> {
     return res.json();
   };
 
-  return useQuery(['growSpace'], fetchNews);
+  return useQuery(['news'], fetchNews);
 }
 
 export default useNews;

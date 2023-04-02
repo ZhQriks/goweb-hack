@@ -20,7 +20,7 @@ const Home = (): JSX.Element => {
         >
           <Box
             sx={theme => ({
-              backgroundImage: `url(src/assets/images/eco_banner.png)`,
+              backgroundImage: `url(https://iili.io/HOBwvIV.png)`,
               borderRadius: theme.radius.md,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
@@ -72,8 +72,8 @@ const Home = (): JSX.Element => {
           </Group>
         </motion.div>
         <BlogPosts />
-        <SectionCards />
         <SocialNetworks />
+        <SectionCards />
         <ContactUs />
       </Stack>
     </Container>

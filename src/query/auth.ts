@@ -26,6 +26,9 @@ async function handleUserResponse(data: AuthResponse): Promise<AuthResponse> {
 }
 
 async function userFn(): Promise<any> {
+  if (!storage.getToken()) {
+    return null;
+  }
   const user = await getUserProfile();
   return user;
 }

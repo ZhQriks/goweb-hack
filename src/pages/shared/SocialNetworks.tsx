@@ -10,9 +10,9 @@ import {
 
 const SocialNetworks = (): JSX.Element => {
   const socialNetworks = [
-    <IconBrandInstagram size={50} color='green' />,
-    <IconBrandYoutube size={50} color='green' />,
-    <IconBrandFacebook size={50} color='green' />,
+    { id: 1, icon: <IconBrandInstagram size={50} color='green' /> },
+    { id: 2, icon: <IconBrandYoutube size={50} color='green' /> },
+    { id: 3, icon: <IconBrandFacebook size={50} color='green' /> },
   ];
   return (
     <Paper radius='md' p='xl' withBorder>
@@ -23,8 +23,8 @@ const SocialNetworks = (): JSX.Element => {
         </Group>
         <Group>
           {socialNetworks.map(icon => (
-            <Paper radius='50%' px='xl' py='lg' withBorder sx={{ cursor: 'pointer' }}>
-              {icon}
+            <Paper radius='50%' px='xl' py='lg' withBorder sx={{ cursor: 'pointer' }} key={icon.id}>
+              {icon.icon}
             </Paper>
           ))}
         </Group>

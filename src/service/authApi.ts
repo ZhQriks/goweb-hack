@@ -39,7 +39,6 @@ export async function handleApiResponse(response: Response): Promise<any> {
   if (response.ok) {
     return data;
   }
-  console.error(JSON.stringify(data, null, 2));
   return Promise.reject(data);
 }
 

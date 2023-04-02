@@ -5,13 +5,11 @@ import { Card, Text, Group, createStyles, getStylesRef, rem } from '@mantine/cor
 const useStyles = createStyles(theme => ({
   card: {
     position: 'relative',
-    height: rem(280),
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
 
     [`&:hover .${getStylesRef('image')}`]: {
       transform: 'scale(1.03)',
     },
-    width: 320,
   },
 
   image: {
@@ -55,17 +53,28 @@ const useStyles = createStyles(theme => ({
 }));
 
 interface ImageCardProps {
-  link: string;
+  link?: string;
   image: string;
   title: string;
-  author: string;
+  author?: string;
+  height?: string | number;
+  width?: string;
 }
 
-const ImageCard = ({ image, title, author, link }: ImageCardProps) => {
+const ImageCard = ({ image, title, author, link, height, width }: ImageCardProps) => {
   const { classes, theme } = useStyles();
 
   return (
-    <Card p='lg' shadow='lg' className={classes.card} radius='md' component='a' href={link}>
+    <Card
+      p='lg'
+      shadow='lg'
+      className={classes.card}
+      radius='md'
+      component='a'
+      href={link || '#'}
+      h={height || 280}
+      w={width || 320}
+    >
       <div className={classes.image} style={{ backgroundImage: `url(${image})` }} />
       <div className={classes.overlay} />
 
@@ -74,12 +83,13 @@ const ImageCard = ({ image, title, author, link }: ImageCardProps) => {
           <Text size='lg' className={classes.title} weight={500}>
             {title}
           </Text>
-
-          <Group position='apart' spacing='xs'>
-            <Text size='sm' className={classes.author}>
-              {author}
-            </Text>
-          </Group>
+          {author && (
+            <Group position='apart' spacing='xs'>
+              <Text size='sm' className={classes.author}>
+                {author}
+              </Text>
+            </Group>
+          )}
         </div>
       </div>
     </Card>
