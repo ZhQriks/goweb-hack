@@ -51,9 +51,6 @@ interface StatsGridProps {
 const StatsGrid = ({ data }: StatsGridProps) => {
   const { classes } = useStyles();
   const stats = data.map(stat => {
-    const Icon = icons[stat.icon];
-    const DiffIcon = stat.diff > 0 ? IconArrowUpRight : IconArrowDownRight;
-
     return <Paper withBorder p='md' radius='md' key={stat.title} />;
   });
   return (

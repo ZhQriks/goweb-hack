@@ -14,7 +14,6 @@ import {
   Modal,
   TextInput,
   Textarea,
-  HueSlider,
   ColorPicker,
 } from '@mantine/core';
 import { DateInput } from '@mantine/dates';

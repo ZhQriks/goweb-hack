@@ -9,7 +9,6 @@ import {
   LoadingOverlay,
   Modal,
   Paper,
-  RangeSlider,
   Select,
   Slider,
   Stack,
@@ -55,9 +54,9 @@ const Calculator = (): JSX.Element => {
   const nextStep = (): void => {
     setActive(current => (current < 3 ? current + 1 : current));
   };
-  const prevStep = () => setActive(current => (current > 0 ? current - 1 : current));
+  const prevStep = (): any => setActive(current => (current > 0 ? current - 1 : current));
 
-  const handleCalculate = async () => {
+  const handleCalculate = async (): Promise<any> => {
     if (active === 2) {
       const messageData = [
         {

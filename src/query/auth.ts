@@ -3,9 +3,7 @@ import {
   getUserProfile,
   registerWithEmailAndPassword,
   loginWithEmailAndPassword,
-  refreshAccessToken,
   AuthResponse,
-  User,
 } from 'service/authApi';
 import { storage } from 'utils/storage';
 
