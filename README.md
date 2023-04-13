@@ -4,5 +4,6 @@
 Этот проект написан на реакте и все вам нужно сделать это установить зависимости и запустить сервер разработки.
 
 ## Installation
+
 Clone the repo and run `yarn install`
 After run `yarn dev` to start the development server.

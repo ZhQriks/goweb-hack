@@ -66,7 +66,7 @@ const Home = (): JSX.Element => {
             <Divider orientation='vertical' color='primaryGreen' />
             <Text size='sm'>
               Предоставить информацию о том, как вести экологически осознанный образ жизни и
-              сокртить <br />
+              сократить <br />
               негативное воздействие на окружающую среду
             </Text>
           </Group>

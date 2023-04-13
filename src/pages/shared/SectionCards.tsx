@@ -80,6 +80,10 @@ const SectionCards = (): JSX.Element => {
   const navigate = useNavigate();
 
   React.useEffect(() => {
+    animation.start({ x: '100vw' });
+  }, []);
+
+  React.useEffect(() => {
     if (inView) {
       animation.start({
         x: 0,
@@ -89,9 +93,6 @@ const SectionCards = (): JSX.Element => {
           bounce: 0.1,
         },
       });
-    }
-    if (!inView) {
-      animation.start({ x: '100vw' });
     }
   }, [inView]);
 
@@ -118,13 +119,14 @@ const SectionCards = (): JSX.Element => {
 
   return (
     <Container size='lg' py='xl'>
-      <Title order={2} className={classes.title} ta='center' mt='sm' ref={ref}>
+      <Title order={2} className={classes.title} ta='center' mt='sm'>
         Основные разделы сайта
       </Title>
-
+      <div ref={ref} />
       <SimpleGrid cols={3} spacing='xl' mt={50} breakpoints={[{ maxWidth: 'md', cols: 1 }]}>
         {features}
       </SimpleGrid>
+      <div ref={ref} />
     </Container>
   );
 };

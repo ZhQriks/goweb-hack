@@ -13,6 +13,7 @@ import {
   SimpleGrid,
   Grid,
   useMantineTheme,
+  Anchor,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { Eventcalendar } from '@mobiscroll/react';
@@ -197,6 +198,7 @@ const Products = (): JSX.Element => {
               Описание:
             </Text>
             <Text>{currentEvent.description}</Text>
+            <Anchor>Ссылка на товар</Anchor>
           </>
         )}
       </Drawer>
