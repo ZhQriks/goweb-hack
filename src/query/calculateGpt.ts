@@ -1,12 +1,11 @@
 import { useMutation, UseMutationResult, useQueryClient } from '@tanstack/react-query';
-import { baseFetch } from 'service/authApi';
 import { gptKey } from 'utils/consts';
 
 export default function useCalculate(): UseMutationResult<any> {
   const queryClient = useQueryClient();
 
   const calculateRes = async (message: any): Promise<any> => {
-    const res = await baseFetch(`https://api.openai.com/v1/chat/completions`, {
+    const res = await fetch(`https://api.openai.com/v1/chat/completions`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
