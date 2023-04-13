@@ -41,7 +41,7 @@ const Calculator = (): JSX.Element => {
       garbage_perc: 40,
       car_km: 40,
       car_carpool: 40,
-      bus_km: 40,
+      bus_km: 40, // 9
     },
   });
 
